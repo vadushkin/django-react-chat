@@ -1,0 +1,5 @@
+django==4.1.5
+python-dotenv==0.21.0
+django-cors-headers==3.13.0
+pusher==3.3.0
+django-rest-framework==0.1.0
