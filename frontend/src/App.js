@@ -10,8 +10,8 @@ function App() {
     useEffect(() => {
         Pusher.logToConsole = true;
 
-        const pusher = new Pusher('d1fd26ca90fee72a230a', {
-            cluster: 'ap2'
+        const pusher = new Pusher(process.env.REACT_APP_APP_KEY, {
+            cluster: process.env.REACT_APP_CLUSTER
         });
 
         const channel = pusher.subscribe('chat');
@@ -39,7 +39,8 @@ function App() {
     return (
         <div className="container">
             <div className="d-flex flex-column align-items-stretch flex-shrink-0 bg-white">
-                <div className="d-flex align-items-center flex-shrink-0 p-3 link-dark text-decoration-none border-bottom">
+                <div
+                    className="d-flex align-items-center flex-shrink-0 p-3 link-dark text-decoration-none border-bottom">
                     <input className="fs-5 fw-semibold"
                            value={username}
                            onChange={e => setUsername(e.target.value)}
